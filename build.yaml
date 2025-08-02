@@ -1,8 +1,8 @@
 ---
 include:
   - board: seeeduino_xiao_ble
-    shield: tbkblu_left
+    shield: skeletyl_left
   - board: seeeduino_xiao_ble
-    shield: tbkblu_right
+    shield: skeletyl_right
   - board: seeeduino_xiao_ble
     shield: settings_reset
