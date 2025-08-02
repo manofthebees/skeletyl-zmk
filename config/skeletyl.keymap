@@ -1,0 +1,165 @@
+#include <behaviors/mouse_keys.dtsi>
+#include <dt-bindings/zmk/mouse.h>
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
+
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1650  // default is 600
+
+&mmv {
+    acceleration-exponent = <1>;
+    delay-ms = <0>;
+    time-to-max-speed-ms = <500>;
+};
+
+/ {
+    behaviors {
+        mouse_mode: mouse_mode {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOUSE_MODE";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <125>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <75>;
+        };
+
+        holding_tapping: holding_tapping {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLDING_TAPPING";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <125>;
+            quick-tap-ms = <75>;
+            flavor = "tap-preferred";
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        dash_moment {
+            bindings = <&kp MINUS>;
+            key-positions = <18 19>;
+            layers = <0>;
+        };
+
+        tab_moment {
+            bindings = <&kp TAB>;
+            key-positions = <10 11 12>;
+            layers = <0>;
+        };
+
+        semicolon {
+            bindings = <&kp SEMICOLON>;
+            key-positions = <29 19>;
+            layers = <0>;
+        };
+
+        tilde_moment {
+            bindings = <&kp GRAVE>;
+            key-positions = <21 20>;
+            layers = <0>;
+        };
+
+        ctrl_tab {
+            bindings = <&kp LC(TAB)>;
+            key-positions = <10 20>;
+            layers = <0>;
+        };
+
+        zero_and_plus {
+            bindings = <&kp EQUAL>;
+            key-positions = <8 9>;
+            layers = <1>;
+        };
+
+        bluetooth {
+            bindings = <&mo 6>;
+            key-positions = <37 38 39>;
+        };
+
+        num_moment {
+            bindings = <&mo 1>;
+            key-positions = <34 35>;
+            layers = <0>;
+        };
+
+        symbols_moment {
+            bindings = <&mo 2>;
+            key-positions = <35 36>;
+            layers = <0>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        alpha {
+            bindings = <
+&kp Q  &kp W  &kp E       &kp R      &kp T                          &kp Y              &kp U      &kp I      &kp O    &kp P
+&kp A  &kp S  &kp D       &kp F      &kp G                          &kp H              &kp J      &kp K      &kp L    &kp SQT
+&kp Z  &kp X  &kp C       &kp V      &kp B                          &kp N              &kp M      &kp COMMA  &kp DOT  &kp FSLH
+              &kp LSHIFT  &kp SPACE  &holding_tapping LCTRL DELETE  &mouse_mode 4 ESC  &kp ENTER  &kp BSPC
+
+            >;
+        };
+
+        numbers_stuff {
+            bindings = <
+&kp N1     &kp N2        &kp N3        &kp N4             &kp N5           &kp N6    &kp N7        &kp N8    &kp N9     &kp N0
+&kp LG(X)  &kp LEFT_GUI  &kp LEFT_ALT  &kp TAB            &trans           &kp LEFT  &kp UP_ARROW  &kp DOWN  &kp RIGHT  &trans
+&kp C_PP   &kp C_PREV    &kp C_NEXT    &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans    &trans        &trans    &trans     &trans
+                         &trans        &trans             &trans           &trans    &trans        &trans
+            >;
+        };
+
+        symbols {
+            bindings = <
+&kp EXCLAMATION  &kp AT_SIGN  &kp HASH  &kp DOLLAR  &kp PERCENT  &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+&trans           &trans       &trans    &trans      &trans       &trans     &trans         &trans        &trans                &trans
+&trans           &trans       &trans    &trans      &trans       &trans     &trans         &trans        &trans                &trans
+                              &trans    &trans      &trans       &trans     &trans         &trans
+            >;
+        };
+
+        programming_symbols {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &kp PIPE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans  &trans
+                &trans  &trans  &trans  &trans    &trans                &trans
+            >;
+        };
+
+        mouse {
+            bindings = <
+&trans  &trans     &kp UP_ARROW  &trans     &trans  &trans          &trans        &trans          &trans           &trans
+&trans  &mkp LCLK  &mkp MCLK     &mkp RCLK  &trans  &mmv MOVE_LEFT  &mmv MOVE_UP  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans
+&trans  &trans     &kp DOWN      &trans     &trans  &trans          &trans        &trans          &trans           &trans
+                   &trans        &trans     &trans  &trans          &trans        &trans
+            >;
+        };
+
+        gaming {
+            bindings = <
+&kp ESC    &kp Q         &kp W           &kp E      &kp R      &none  &none  &none  &none  &to 0
+&kp LSHFT  &kp A         &kp S           &kp D      &kp F      &none  &none  &none  &none  &kp RIGHT_GUI
+&kp TAB    &kp Z         &kp X           &kp C      &kp V      &none  &none  &none  &none  &none
+                         &kp LSHFT       &kp SPACE  &kp LCTRL  &none  &none  &none
+            >;
+        };
+
+        bluetooth {
+            bindings = <
+&trans        &trans        &trans        &trans        &trans      &trans  &trans  &trans  &trans  &trans
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR  &trans  &trans  &trans  &trans  &trans
+&trans        &trans        &trans        &trans        &trans      &trans  &trans  &trans  &trans  &trans
+                            &trans        &trans        &trans      &trans  &trans  &trans
+            >;
+        };
+    };
+};
