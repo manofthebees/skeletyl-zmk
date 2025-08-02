@@ -73,7 +73,7 @@
 
         zero_and_plus {
             bindings = <&kp EQUAL>;
-            key-positions = <8 9>;
+            key-positions = <19 18 17>;
             layers = <1>;
         };
 
