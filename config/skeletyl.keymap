@@ -7,11 +7,7 @@
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1650  // default is 600
 
-&mmv {
-    acceleration-exponent = <1>;
-    delay-ms = <0>;
-    time-to-max-speed-ms = <500>;
-};
+&mmv { delay-ms = <0>; };
 
 / {
     behaviors {
