@@ -74,7 +74,6 @@
         zero_and_plus {
             bindings = <&kp EQUAL>;
             key-positions = <19 18 17>;
-            layers = <1>;
         };
 
         num_moment {
@@ -105,7 +104,7 @@
 
         delete {
             bindings = <&kp DELETE>;
-            key-positions = <25 26>;
+            key-positions = <27 28>;
         };
     };
 
