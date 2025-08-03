@@ -102,6 +102,11 @@
             bindings = <&bootloader>;
             key-positions = <5 7 8 9 34>;
         };
+
+        delete {
+            bindings = <&kp DELETE>;
+            key-positions = <25 26>;
+        };
     };
 
     keymap {
