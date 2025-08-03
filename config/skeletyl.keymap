@@ -95,11 +95,13 @@
         left_bootloader {
             bindings = <&bootloader>;
             key-positions = <0 1 4 2 31>;
+            layers = <0>;
         };
 
         right_bootloader {
             bindings = <&bootloader>;
             key-positions = <5 7 8 9 34>;
+            layers = <0>;
         };
 
         delete {
