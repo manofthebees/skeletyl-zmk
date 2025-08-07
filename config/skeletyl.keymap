@@ -171,11 +171,11 @@
 
         misc {
             bindings = <
-&trans            &trans          &trans        &trans             &trans           &trans  &trans  &trans  &trans  &trans
-&kp LG(X)         &kp LEFT_GUI    &kp LEFT_ALT  &kp TAB            &trans           &trans  &trans  &trans  &trans  &trans
-&kp C_PLAY_PAUSE  &kp C_PREVIOUS  &kp C_NEXT    &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans  &trans  &trans  &trans  &trans
+&trans            &trans          &trans        &trans             &trans           &trans    &trans  &trans    &trans     &trans
+&kp LG(X)         &kp LEFT_GUI    &kp LEFT_ALT  &kp TAB            &trans           &kp LEFT  &kp UP  &kp DOWN  &kp RIGHT  &trans
+&kp C_PLAY_PAUSE  &kp C_PREVIOUS  &kp C_NEXT    &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans    &trans  &trans    &trans     &trans
 
-                                  &trans        &trans             &trans           &trans  &trans  &trans
+                                  &trans        &trans             &trans           &trans    &trans  &trans
             >;
         };
     };
