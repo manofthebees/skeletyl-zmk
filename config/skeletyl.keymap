@@ -46,7 +46,7 @@
             label = "BOOTDANCEQ";
             #binding-cells = <0>;
             bindings = <&kp Q>, <&kp Q>, <&kp Q>, <&kp Q>, <&bootloader>;
-
+            flavor = "tap-preferred";
             tapping-term-ms = <200>;
         };
 
@@ -55,7 +55,7 @@
             label = "BOOTDANCEP";
             #binding-cells = <0>;
             bindings = <&kp P>, <&kp P>, <&kp P>, <&kp P>, <&bootloader>;
-
+            flavor = "tap-preferred";
             tapping-term-ms = <200>;
         };
     };
