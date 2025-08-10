@@ -45,7 +45,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "SPACEDANCE";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             bindings = <&kp SPACE>, <&mo 1>, <&mo 7>, <&mo 2>;
         };
 
