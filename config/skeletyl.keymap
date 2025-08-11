@@ -37,24 +37,8 @@
             compatible = "zmk,behavior-tap-dance";
             label = "SHIFTDANCE";
             #binding-cells = <0>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <200>;
             bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
-        };
-
-        bootDanceQ: bootDanceQ {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BOOTDANCEQ";
-            #binding-cells = <0>;
-            bindings = <&kp Q>, <&kp Q>, <&kp Q>, <&kp Q>, <&bootloader>;
-            tapping-term-ms = <200>;
-        };
-
-        bootDanceP: bootDanceP {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BOOTDANCEP";
-            #binding-cells = <0>;
-            bindings = <&kp P>, <&kp P>, <&kp P>, <&kp P>, <&bootloader>;
-            tapping-term-ms = <200>;
         };
     };
 
@@ -112,6 +96,11 @@
             bindings = <&tog 5>;
             key-positions = <0 1 2 3 4 5 6 7 8 9>;
         };
+
+        left_bootloader {
+            bindings = <&bootloader>;
+            key-positions = <20 21 22 23 31>;
+        };
     };
 
     keymap {
@@ -119,11 +108,11 @@
 
         alpha {
             bindings = <
-&bootDanceQ  &kp W  &kp E        &kp R                &kp T      &kp Y              &kp U                &kp I      &kp O    &bootDanceP
-&kp A        &kp S  &kp D        &kp F                &kp G      &kp H              &kp J                &kp K      &kp L    &kp SQT
-&kp Z        &kp X  &kp C        &kp V                &kp B      &kp N              &kp M                &kp COMMA  &kp DOT  &kp FSLH
+&kp Q  &kp W  &kp E        &kp R                &kp T      &kp Y              &kp U                &kp I      &kp O    &kp P
+&kp A  &kp S  &kp D        &kp F                &kp G      &kp H              &kp J                &kp K      &kp L    &kp SQT
+&kp Z  &kp X  &kp C        &kp V                &kp B      &kp N              &kp M                &kp COMMA  &kp DOT  &kp FSLH
 
-                    &shiftDance  &mouse_mode 1 SPACE  &kp LCTRL  &mouse_mode 4 ESC  &mouse_mode 7 ENTER  &kp BSPC
+              &shiftDance  &mouse_mode 1 SPACE  &kp LCTRL  &mouse_mode 4 ESC  &mouse_mode 7 ENTER  &kp BSPC
             >;
         };
 
@@ -159,7 +148,7 @@
 
         mouse {
             bindings = <
-&trans  &trans     &kp UP_ARROW  &trans     &trans  &trans          &trans        &trans          &trans           &trans
+&trans  &trans     &kp UP_ARROW  &trans     &trans  &trans          &trans        &trans          &trans           &bootloader
 &trans  &mkp LCLK  &mkp MCLK     &mkp RCLK  &trans  &mmv MOVE_LEFT  &mmv MOVE_UP  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans
 &trans  &trans     &kp DOWN      &trans     &trans  &trans          &trans        &trans          &trans           &trans
 
