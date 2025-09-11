@@ -90,6 +90,11 @@
             bindings = <&bootloader>;
             key-positions = <20 21 22 23 31>;
         };
+
+        caps {
+            bindings = <&kp CAPSLOCK>;
+            key-positions = <20 21 22>;
+        };
     };
 
     keymap {
@@ -97,11 +102,11 @@
 
         alpha {
             bindings = <
-&kp Q  &kp W  &kp E        &kp R                &kp T      &kp Y              &kp U                &kp I      &kp O    &kp P
-&kp A  &kp S  &kp D        &kp F                &kp G      &kp H              &kp J                &kp K      &kp L    &kp SQT
-&kp Z  &kp X  &kp C        &kp V                &kp B      &kp N              &kp M                &kp COMMA  &kp DOT  &kp FSLH
+&kp Q  &kp W  &kp E           &kp R                &kp T      &kp Y              &kp U                &kp I      &kp O    &kp P
+&kp A  &kp S  &kp D           &kp F                &kp G      &kp H              &kp J                &kp K      &kp L    &kp SQT
+&kp Z  &kp X  &kp C           &kp V                &kp B      &kp N              &kp M                &kp COMMA  &kp DOT  &kp FSLH
 
-              &shiftDance  &mouse_mode 1 SPACE  &kp LCTRL  &mouse_mode 4 ESC  &mouse_mode 7 ENTER  &kp BSPC
+              &kp LEFT_SHIFT  &mouse_mode 1 SPACE  &kp LCTRL  &mouse_mode 4 ESC  &mouse_mode 7 ENTER  &kp BSPC
             >;
         };
 
