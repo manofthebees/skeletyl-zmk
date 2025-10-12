@@ -95,6 +95,11 @@
             bindings = <&kp CAPSLOCK>;
             key-positions = <20 21 22>;
         };
+
+        programming_symb {
+            bindings = <&mo 3>;
+            key-positions = <35 34>;
+        };
     };
 
     keymap {
