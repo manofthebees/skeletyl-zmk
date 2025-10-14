@@ -99,6 +99,7 @@
         programming_symb {
             bindings = <&mo 3>;
             key-positions = <21 22>;
+            layers = <0>;
         };
     };
 
