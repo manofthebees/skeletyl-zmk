@@ -98,7 +98,7 @@
 
         programming_symb {
             bindings = <&mo 3>;
-            key-positions = <31 32>;
+            key-positions = <21 22>;
         };
     };
 
