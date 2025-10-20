@@ -101,6 +101,11 @@
             key-positions = <21 22>;
             layers = <0>;
         };
+
+        pipe_mode {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <9 19 29>;
+        };
     };
 
     keymap {
