@@ -41,6 +41,15 @@
             require-prior-idle-ms = <150>;
             flavor = "tap-preferred";
         };
+
+        tap_mouse_tap_misc: tap_mouse_tap_misc {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_MOUSE_TAP_MISC";
+            #binding-cells = <0>;
+            bindings = <&mo 2>, <&mo 4>;
+
+            tapping-term-ms = <200>;
+        };
     };
 
     combos {
