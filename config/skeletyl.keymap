@@ -113,7 +113,7 @@
 
         escap_key {
             bindings = <&kp ESCAPE>;
-            key-positions = <7 8>;
+            key-positions = <7 8 6>;
             layers = <0>;
         };
     };
