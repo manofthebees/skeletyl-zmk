@@ -123,9 +123,9 @@
 
         alpha {
             bindings = <
-&kp Q  &kp W                &kp E           &kp R                &kp T   &kp Y   &kp U                &kp I               &kp O                &kp P
-&kp A  &tap_hol_kp LCTRL S  &kp D           &kp F                &kp G   &kp H   &kp J                &tap_hol_kp RALT K  &tap_hol_kp RCTRL L  &kp SQT
-&kp Z  &kp X                &kp C           &kp V                &kp B   &kp N   &kp M                &kp COMMA           &kp DOT              &kp FSLH
+&kp Q  &kp W                &kp E           &kp R                &kp T   &kp Y   &kp U                &kp I          &kp O                &kp P
+&kp A  &tap_hol_kp LCTRL S  &kp D           &kp F                &kp G   &kp H   &kp J                &kp K          &tap_hol_kp RCTRL L  &kp SQT
+&kp Z  &kp X                &kp C           &kp V                &kp B   &kp N   &kp M                &kp COMMA      &kp DOT              &kp FSLH
 
                             &kp LEFT_SHIFT  &mouse_mode 1 SPACE  &trans  &trans  &tap_mouse_tap_misc  &kp BACKSPACE
             >;
